@@ -1,0 +1,99 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "description": "A sample API that uses a petstore as an example to demonstrate features in the swagger-2.0 specification",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "name": "Swagger API Team"
+    },
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/pet": {
+      "post": {
+        "tags": [
+            "pet"
+        ],
+        "summary": "List all pets",
+        "description": "",
+        "operationId": "listPets",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of pets.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-auth": {
+          "type" : "none"
+        },
+        "x-amazon-apigateway-integration" : {
+          "type" : "HTTP",
+          "uri":"http://petstore.swagger.io/v2/pet",
+          "httpMethod" : "POST",
+          "requestTemplates" : {
+            "application/json" : "{'body' : $input.json('$')}"
+          },
+          "requestParameters" : {},
+          "cacheNamespace" : "cache-namespace",
+          "cacheKeyParameters" : [],
+          "responses" : {
+            "-" : {
+              "statusCode" : "200",
+              "responseParameters" : {},
+              "responseTemplates" : {
+                  "application/json" : ""
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Pet": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
