@@ -4,15 +4,15 @@
   "version": "0.1.0",
   "main": "index.js",
   "author": {
-    "name": "jh3y",
-    "email": "jh3y@users.noreply.github.com"
+    "name": "picsoung",
+    "email": "picsoung@users.noreply.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jh3y/node-cli-boilerplate.git"
+    "url": "git@github.com:picsoung/3scale-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/jh3y/node-cli-boilerplate/issues"
+    "url": "https://github.com/picsoung/3scale-cli/issues"
   },
   "licenses": [
     {
