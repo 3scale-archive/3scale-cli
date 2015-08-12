@@ -1,40 +1,39 @@
 {
- "name": "node-3scale-cli",
- "description": "a node cli for 3scale API management",
- "version": "0.0.1",
- "main": "index.js",
- "author": {
-     "name": "jh3y",
-     "email": "jh3y@users.noreply.github.com"
- },
- "repository": {
-     "type": "git",
-     "url": "git@github.com:jh3y/node-cli-boilerplate.git"
- },
- "bugs": {
-     "url": "https://github.com/jh3y/node-cli-boilerplate/issues"
- },
- "licenses": [
-     {
-         "type": "MIT"
-     }
- ],
- "preferGlobal": true,
- "bin": {
-     "cli": "./bin/cli"
- },
- "engines": {
-     "node": ">= 0.8.0"
- },
- "dependencies": {
-     "commander": "^2.2.0",
-     "colors": "^0.6.2",
-     "swagger-parser":"^2.5.0",
-     "request":"^2.60.0",
-     "slugify":"^0.1.1",
-     "async":"^1.4.2"
- },
- "keywords": [],
- "devDependencies": {
- }
+  "name": "node-3scale-cli",
+  "description": "a node cli for 3scale API management",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": {
+    "name": "jh3y",
+    "email": "jh3y@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jh3y/node-cli-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jh3y/node-cli-boilerplate/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "cli": "./bin/cli"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+    "commander": "^2.2.0",
+    "colors": "^0.6.2",
+    "swagger-parser": "^2.5.0",
+    "request": "^2.60.0",
+    "slugify": "^0.1.1",
+    "async": "^1.4.2"
+  },
+  "keywords": [],
+  "devDependencies": {}
 }
