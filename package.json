@@ -21,7 +21,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "cli": "./bin/cli"
+    "cli": "./bin/3scale-cli"
   },
   "engines": {
     "node": ">= 0.8.0"
