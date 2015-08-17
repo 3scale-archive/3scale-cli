@@ -6,7 +6,7 @@ This repository contains the command line utility for the API management solutio
 
 To install run the command
 
-`npm install 3scale-cli`
+`npm install -g node-3scale-cli`
 
 ## Setup
 
