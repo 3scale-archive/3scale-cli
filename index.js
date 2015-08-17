@@ -1,1 +1,1 @@
-module.exports = require('./lib/cli.js');
+module.exports = require('./lib/3scale-cli.js');
