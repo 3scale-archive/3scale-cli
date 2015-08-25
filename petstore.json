@@ -57,7 +57,7 @@
           "uri":"http://petstore.swagger.io/v2/pet",
           "httpMethod" : "POST",
           "requestTemplates" : {
-            "application/json" : "{'body' : $input.json('$')}"
+            "application/json" : "{'body' : $input.json("$")}"
           },
           "requestParameters" : {},
           "cacheNamespace" : "cache-namespace",
