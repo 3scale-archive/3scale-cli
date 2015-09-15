@@ -1,6 +1,6 @@
 {
   "name": "node-3scale-cli",
-  "description": "a node cli for 3scale API management",
+  "description": "A command line interface for 3scale API management",
   "version": "0.3.6",
   "main": "index.js",
   "author": {
