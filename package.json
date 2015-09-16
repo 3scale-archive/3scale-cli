@@ -27,7 +27,7 @@
     "node": ">= 0.8.0"
   },
   "dependencies": {
-    "3scale-lambda": "^0.0.1",
+    "3scale-lambda": "^1.0.0",
     "async": "^1.4.2",
     "colors": "^0.6.2",
     "commander": "^2.2.0",
