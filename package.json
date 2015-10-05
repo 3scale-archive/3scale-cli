@@ -9,10 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:picsoung/3scale-cli.git"
+    "url": "git@github.com:3scale/3scale-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/picsoung/3scale-cli/issues"
+    "url": "https://github.com/3scale/3scale-cli/issues"
   },
   "licenses": [
     {
