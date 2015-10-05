@@ -23,12 +23,11 @@ Before using the CLI tool you need to configure it first:
 ? 3scale id awesome-api
 [3scale-cli] 3scale cli tool configured
 ```
-[SCREENSHOT]
+
+![output from terminal](https://www.evernote.com/l/ACV6L21JMwxFm771F9iPNwu3j7eyqLrArkoB/image.png)
 
 The *PROVIDER_KEY* can be found on your `Account` tab after you log in to [3scale](http://3scale.net).
 Your *THREESCALE_ID* corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `THREESCALE_ID-admin.3scale.net`.
-
-[SCREENSHOT]
 
 ## Import Swagger to 3scale
 
@@ -39,7 +38,7 @@ Run this command to update an existing service in your [3scale](http://3scale.ne
 `3scale-cli import -f /path/to/swagger.json -s SERVICE_ID`
 
 *SERVICE_ID* can be found in your 3scale dashboard.
-[SCREENSHOT]
+![where to find SERVICE_ID on 3scale](https://www.evernote.com/l/ACW0h8yHfplHi4r-WivB0e0FT5X-6mgutmgB/image.png)
 
 ### To a new service
 
@@ -77,4 +76,16 @@ Display the [3scale](http://3scale.net) CLI help with the following command
 ```
 
 ## Contribute
-If you see any typo or a need a specific feature, you are welcome to fork this repo and make a pull request or write an issue.
+If you find typo or a need a specific feature, you are welcome to fork this repo and make a pull request or write an issue.
+
+## License
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Alex Hortin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
