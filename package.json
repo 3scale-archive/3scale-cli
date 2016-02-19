@@ -36,7 +36,9 @@
     "swagger-parser": "^3.0.0",
     "inquirer": "^0.9.0",
     "q": "^1.4.1",
-    "nconf": "^0.7.2"
+    "nconf": "^0.7.2",
+    "raml-1-parser":"*",
+    "underscore":"*"
   },
   "keywords": [],
   "devDependencies": {}
