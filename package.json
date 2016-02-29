@@ -1,7 +1,7 @@
 {
   "name": "node-3scale-cli",
   "description": "A command line interface for 3scale API management",
-  "version": "0.8.0",
+  "version": "0.7.3",
   "main": "index.js",
   "author": {
     "name": "picsoung",
@@ -38,7 +38,7 @@
     "q": "^1.4.1",
     "raml-1-parser": "raml-org/raml-js-parser-2",
     "request": "^2.60.0",
-    "slugify": "^0.1.1",
+    "slug": "^0.9.1",
     "swagger-parser": "^3.0.0",
     "underscore": "*"
   },
