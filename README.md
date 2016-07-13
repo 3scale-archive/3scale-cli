@@ -29,22 +29,30 @@ Before using the CLI tool you need to configure it first:
 The *PROVIDER_KEY* can be found on your `Account` tab after you log in to [3scale](http://3scale.net).
 Your *THREESCALE_ID* corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `THREESCALE_ID-admin.3scale.net`.
 
-## Import Swagger to 3scale
+## Import API definition to 3scale
 
 ### To an existing service
 
 Run this command to update an existing service in your [3scale](http://3scale.net) account and create metrics for each endpoint.
 
-`3scale-cli import -f /path/to/swagger.json -s SERVICE_ID`
+`3scale-cli import --type <spec_type> -f /path/to/apidefinition -s SERVICE_ID`
+
+*spec_type* could be `swagger` or `raml`
 
 *SERVICE_ID* can be found in your 3scale dashboard.
 ![where to find SERVICE_ID on 3scale](https://www.evernote.com/l/ACW0h8yHfplHi4r-WivB0e0FT5X-6mgutmgB/image.png)
+
+More options?
+`-p, --pattern <pattern_type>` specify a pattern for method names, you can use `{path}` and `{method}` variables in the pattern
+for example `-p {method}_{path}` will give method with names like `GET_/pets`
+
+`-a, --appplan <applan_name>` create a new application plan
 
 ### To a new service
 
 *Note*: This feature is only accessible to *Pro* and *Entreprise* customers
 
-`3scale-cli import -f /path/to/swagger.json`
+`3scale-cli import  --type <spec_type> -f /path/to/swagger.json`
 
 ## Help
 
@@ -59,7 +67,7 @@ Display the [3scale](http://3scale.net) CLI help with the following command
 
   Commands:
 
-    import [options]     Import a swagger spec into 3scale
+    import [options]     Import an API from it's API definition (swagger or RAML) into 3scale
     lambda [options]     Generate the Lambda function to integrate with 3scale
     config               Configure the 3scale cli
     appplan [options]    Adds an application plan to a service
