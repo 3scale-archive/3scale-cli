@@ -40,7 +40,8 @@
     "request": "^2.60.0",
     "slug": "^0.9.1",
     "swagger-parser": "^3.0.0",
-    "underscore": "*"
+    "underscore": "*",
+    "prettyjson":"*"
   },
   "keywords": [],
   "devDependencies": {}
