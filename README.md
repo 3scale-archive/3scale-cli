@@ -88,7 +88,6 @@ Display the [3scale](http://3scale.net) CLI help with the following command
   Commands:
 
     import [options]     Import an API from it's API definition (swagger or RAML) into 3scale
-    lambda [options]     Generate the Lambda function to integrate with 3scale
     config               Configure the 3scale cli
     appplan [options]    Adds an application plan to a service
     metrics [options]    Add a new metric to a service.
