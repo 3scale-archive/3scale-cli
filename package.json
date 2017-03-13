@@ -37,6 +37,7 @@
     "nconf": "^0.7.2",
     "os-homedir": "^1.0.1",
     "prettyjson": "*",
+    "prompt": "^1.0.0",
     "q": "^1.4.1",
     "raml-1-parser": "*",
     "request": "^2.60.0",

@@ -65,6 +65,6 @@ module.exports = function mappingRulesCommand(program) {
           default:
             program.error({message:"Unknown command \""+command+"\""});
             process.exit(1)
-      } //end swith
+      } //end switch
     });
 }
