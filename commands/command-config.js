@@ -1,4 +1,5 @@
 var services = require("../lib/services");
+var config = require("../lib/config");
 
 module.exports = function configCommand(program) {
   program
