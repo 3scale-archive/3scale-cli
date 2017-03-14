@@ -6,7 +6,6 @@ module.exports = function methodsRulesCommand(program) {
     .description("\n  create - Create a new method \n  list - List all methods of a service \n  show - Show a specific method of a service \n update - update a specific method of a service \n  delete - Delete a method of a service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-m, --metric <metric_id>","Metric id")
-    // .option("-l, --list","List all methods")
     .option("-t, --methodID <method_id>", "Method ID")
     .option("-d, --method <method_name>","Method Name")
     .option("-u, --unit <name>", "unit name")
@@ -14,32 +13,12 @@ module.exports = function methodsRulesCommand(program) {
       program.isConfigured()
       program.require(options.service,"Service ID");
 
-      // if(!command.service){
-      //   cli.error({message:"Service id parameter is mandatory"});
-      //   process.exit(1);
-      // }
-      // if(!command.metric){
-      //   cli.error({message:"Metric id parameter is mandatory"});
-      //   process.exit(1);
-      // }
-      // if(command.list && command.metric){
-      //   methods.listMethods(command.service);
-      // }
-      // if(command.create){
-      //     if(command.unit){
-      //       methods.createMethod(command.service,command.metric,command.create,command.unit);
-      //     }else {
-      //       methods.createMethod(command.service,command.metric,command.create);
-      //     }
-      // }
-
-
       switch (command) {
           case "create":
             program.require(options.metric,"Metric ID required");
             program.require(options.method,"Method name required");
 
-            methods.createMethod(options.service, options.metric, options.method, command.unit).then(function(result){
+            methods.createMethod(options.service, options.metric, options.method, options.unit).then(function(result){
               var msg = "Method with name "+options.method.inverse+" on service "+options.service.inverse+" created under "+options.metric.inverse+" metric."
               program.print({message:msg, type:"success"});
             });
