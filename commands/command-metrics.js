@@ -1,6 +1,6 @@
 var metrics = require("../lib/metrics");
 
-module.exports = function metricsRulesCommand(program) {
+module.exports = function metricsCommand(program) {
   program
     .command("metrics <cmd>")
     .description("\n  create - Create a new metric \n  list - List all metrics of a service \n  show - Show a specific metric of a service \n update - update a specific metric of a service \n  delete - Delete a metric of a service")
