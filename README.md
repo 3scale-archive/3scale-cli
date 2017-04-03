@@ -104,7 +104,67 @@ Display the [3scale](http://3scale.net) CLI help with the following command
 ```
 
 ## Contribute
-If you find typo or a need a specific feature, you are welcome to fork this repo and make a pull request or write an issue.
+
+3Scale-cli is open source, and we welcome anybody who wants to participate and contribute!
+
+If you want to fix a bug or make any changes, please [log an issue in GitHub](https://github.com/3scale/3scale-cli/issues) describing the bug
+or new feature.
+
+### Get the code
+
+The easiest way to get started with the code is to [create your own fork](http://help.github.com/forking/)
+of this repository, and then clone your fork:
+```bash
+  $ git clone git@github.com:<you>/3scale-cli.git
+  $ cd 3scale-cli
+  $ git remote add upstream git://github.com/3scale/3scale-cli.git
+```
+At any time, you can pull changes from the upstream and merge them onto your master:
+```bash
+  $ git checkout master               # switches to the 'master' branch
+  $ git pull upstream master          # fetches all 'upstream' changes and merges 'upstream/master' onto your 'master' branch
+  $ git push origin                   # pushes all the updates to your fork, which should be in-sync with 'upstream'
+```
+The general idea is to keep your 'master' branch in-sync with the 'upstream/master'.
+
+### Make a fix
+
+If you want to fix a bug or make any changes, please [log an issue in GitHub](https://github.com/3scale/3scale-cli/issues) describing the bug
+or new feature. Then we highly recommend making the changes on a branch named with the issue number. For example, this command creates
+a branch for the issue #17 :
+```bash
+  $ git checkout -b 3scale-cli-issue-17
+```
+After you're happy with your changes and a full build (with unit tests) runs successfully, commit your
+changes on your topic branch. Then it's time to check for and pull any recent changes that were made in
+the official repository:
+```bash
+  $ git checkout master               # switches to the 'master' branch
+  $ git pull upstream master          # fetches all 'upstream' changes and merges 'upstream/master' onto your 'master' branch
+  $ git checkout 3scale-cli-issue-17   # switches to your topic branch
+  $ git rebase master                 # reapplies your changes on top of the latest in master
+                                      # (i.e., the latest from master will be the new base for your changes)
+```
+
+Push your changes and [generate a pull-request](http://help.github.com/pull-requests/)
+
+Please try to create one commit per feature or fix, generally the easiest way to do this is via [git squash](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Squashing-Commits).
+This makes reverting changes easier, and avoids needlessly polluting the repository history with checkpoint commits.
+
+### Building 3scale-cli
+
+#### Requirements
+- NodeJS
+
+#### Building
+```bash
+  $ npm install
+```
+
+#### Running
+```bash
+  $ bin/3scale-api
+```
 
 ## License
 
