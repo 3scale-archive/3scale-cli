@@ -26,8 +26,11 @@ Before using the CLI tool you need to configure it first:
 
 ![output from terminal](https://www.evernote.com/l/ACV6L21JMwxFm771F9iPNwu3j7eyqLrArkoB/image.png)
 
-The *PROVIDER_KEY* can be found on your `Account` tab after you log in to [3scale](http://3scale.net).
 Your *THREESCALE_ID* corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `THREESCALE_ID-admin.3scale.net`.
+
+The *PROVIDER_KEY* is the key that identifies you as a 3scale customer. It can be found in the ["Account"](https://CHANGEME-admin.3scale.net/p/admin/account) menu of your 3scale admin portal.  
+
+![Provider Key](docs/provider-key.png)
 
 ## Import API definition to 3scale
 
