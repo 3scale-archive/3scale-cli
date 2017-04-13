@@ -2,8 +2,8 @@ var appplan = require("../lib/application_plans");
 
 module.exports = function applicationPlanCommand(program) {
   program
-    .command("appplan <cmd>")
-    .description("\n  create - Create a new Application Plan \n  list - List all Application Plans \n  show - Show a specific Application Plan of a service \n  delete - Delete a Application Plan of a service")
+    .command("app-plan <cmd>")
+    .description("\n  create - Create a new Application Plan \n  list - List all Application Plans \n  show - Show a specific Application Plan of a service \n  delete - Delete an Application Plan of a service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-p, --plan <appplan_name>","Specify application plan name")
     .option("-a, --appplan <appplan_id>", "Specify application plan id")
