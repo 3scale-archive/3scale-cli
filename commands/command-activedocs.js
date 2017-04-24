@@ -42,14 +42,10 @@ module.exports = function activeDocsCommand(program) {
           })
           break;
         default:
+        //display help if command not formatted properly
           program.error({message:"Unknown command \""+command+"\""});
+          this.outputHelp()
           process.exit(1)
       }
     });
-
-    if(typeof command === "undefined"){
-      program.error({message:"Unknown command \""+command+"\""});
-      program.outputHelp()
-      process.exit(1)
-    }
 }
