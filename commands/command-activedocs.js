@@ -2,8 +2,8 @@ var activedocs = require("../lib/activedocs");
 
 module.exports = function activeDocsCommand(program) {
   program
-    .command("docs [command]")
-    .usage("docs <command> [options]")
+    .command("activedocs <command>")
+    .usage("<command> [options]")
     .description("\n  create - Create a new ActiveDocs \n  list - List all ActiveDocs \n  update - Update a specific ActiveDocs spec \n  delete - Delete an ActiveDocs spec ")
     .option("-i, --docs <docs_id>","Specify activedocs id")
     .option("-f, --file <path>", "Specify path to an API description file")
