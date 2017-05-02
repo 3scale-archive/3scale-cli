@@ -35,7 +35,7 @@ Your *THREESCALE_ID* corresponds to the domain of your [3scale](http://3scale.ne
 
 Run this command to update an existing service in your [3scale](http://3scale.net) account and create metrics for each endpoint.
 
-`3scale-cli import --type <spec_type> -f /path/to/apidefinition -s SERVICE_ID`
+`3scale-cli import <spec_type> -f /path/to/apidefinition -s SERVICE_ID`
 
 *spec_type* could be `swagger` or `raml`
 
