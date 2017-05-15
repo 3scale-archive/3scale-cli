@@ -33,8 +33,8 @@ module.exports = function methodsRulesCommand(program) {
             break;
           case "show":
             program.require(options.metric,"Metric ID required");
-            program.require(options.method,"Method ID required");
-            methods.getMethodById(options.service,options.metric,options.method).then(function(result){
+            program.require(options.methodID,"Method ID required");
+            methods.getMethodById(options.service,options.metric,options.methodID).then(function(result){
               var msg = "Details about method.\n"
               program.print({message:msg, type:"success", table: result});
             });
