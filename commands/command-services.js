@@ -11,7 +11,7 @@ module.exports = function servicesCommand(program) {
 
       switch (command) {
           case "create":
-            program.require(options.sname,"Service name is required");
+            program.require(options.serviceName,"Service name is required");
             services.createService(options.serviceName).then(function(result){
               var msg = "Service with name "+options.serviceName.inverse+" created."
               program.print({message:msg, type:"success"});
