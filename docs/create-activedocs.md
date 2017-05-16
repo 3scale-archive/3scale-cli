@@ -4,7 +4,8 @@
 
 Note: 3scale ActiveDocs are based on API definitions which are Open API / Swagger compliant. There are multiple online and free tools to validate your API definition, for example [Swagger 2.0 Parser and Validator](http://bigstickcarpet.com/swagger-parser/www/index.html)
 
-To create your interactive documentation, run the following command:
+To upload your API definition to 3scale and create the ActiveDocs, run the following command:
+
 `3scale-cli activedocs -f /path/to/apidefinition`
 
 Once you have created the ActiveDocs, learn how you publish them in your developer portal following [this tutorial](https://support.3scale.net/docs/api-documentation/publish-activedocs).
