@@ -3,7 +3,7 @@ var services = require("../lib/services");
 module.exports = function servicesCommand(program) {
   program
     .command("services <cmd>")
-    .description("\n  create - Create a new service \n  list - List all services \n  show - Show a specific service \n update - update a specific a service")
+    .description("\n  create - Create a new service \n  list - List all services \n  show - Show a specific service \n  update - update a specific a service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-c, --serviceName <service_name>","Specify service name")
     .action(function(command, options){
@@ -11,7 +11,7 @@ module.exports = function servicesCommand(program) {
 
       switch (command) {
           case "create":
-            program.require(options.sname,"Service name is required");
+            program.require(options.serviceName,"Service name");
             services.createService(options.serviceName).then(function(result){
               var msg = "Service with name "+options.serviceName.inverse+" created."
               program.print({message:msg, type:"success"});
