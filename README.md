@@ -1,6 +1,22 @@
 # 3scale CLI
 
+## Overview
 This repository contains the command line utility for the API management solution [3scale.net](http://3scale.net).
+
+Its main capabilities include importing an API definition (Open API / Swagger or RAML) into 3scale and:
+
+1) [Importing and API definition (Open API / Swagger or RAML) to define your API](/docs/import-api-definition.md)
+2) [Creating interactive documentation (ActiveDocs)](/docs/create-activedocs.md)
+
+Additionally, you can also:
+
+* Create, list, show, and update [services](/docs/services.md)
+* Create, list, show, and delete [application plans](/docs/application-plans.md)
+* Create, list, show, update, and delete [mapping rules](/docs/mapping-rules.md)
+* Create, list, show, update, and delete [methods](/docs/methods.md)
+* Create, list, show, update, and delete [metrics](/docs/metrics.md)
+
+Note: Get familiar with the [3scale terminology](https://support.3scale.net/docs/terminology) reading through our support documentation. 
 
 ## Install
 
@@ -8,13 +24,19 @@ To install run the command
 
 `npm install -g node-3scale-cli`
 
-## Prerequisites
-* [3scale](http://3scale.net) account - sign up for free at [http://www.3scale.net](http://www.3scale.net)
+Get started looking at the options by running the 'Help' command:
+`3cale-cli --help`
 
+To see specific help for each one of the options, for example "activedocs", run:
+```3scale-cli activedocs --help```
+
+## Prerequisites
+
+* [3scale](http://3scale.net) account - sign up for free at [http://www.3scale.net](http://www.3scale.net)
 
 ## Config
 
-Before using the CLI tool you need to configure it first:
+Before using the CLI tool you need to configure it and link it to your 3scale account:
 
 ```
 3scale-cli config
@@ -26,88 +48,15 @@ Before using the CLI tool you need to configure it first:
 
 ![output from terminal](https://www.evernote.com/l/ACV6L21JMwxFm771F9iPNwu3j7eyqLrArkoB/image.png)
 
-Your *THREESCALE_ID* corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `THREESCALE_ID-admin.3scale.net`.
+Your **3scale id** corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `3scale_id-admin.3scale.net`.
 
-The *PROVIDER_KEY* is the key that identifies you as a 3scale customer. It can be found in the ["Account"](https://CHANGEME-admin.3scale.net/p/admin/account) menu of your 3scale admin portal.  
+The **3scale provider key** is the key that identifies you as a 3scale customer. It can be found in the ["Account"](https://CHANGEME-admin.3scale.net/p/admin/account) menu of your 3scale admin portal.  
 
 ![Provider Key](docs/provider-key.png)
 
-## Import API definition to 3scale
-
-### To an existing service
-
-Run this command to update an existing service in your [3scale](http://3scale.net) account and create metrics for each endpoint.
-
-`3scale-cli import <spec_type> -f /path/to/apidefinition -s SERVICE_ID`
-
-*spec_type* could be `swagger` or `raml`
-
-*SERVICE_ID* can be found in your 3scale dashboard.
-![where to find SERVICE_ID on 3scale](https://www.evernote.com/l/ACW0h8yHfplHi4r-WivB0e0FT5X-6mgutmgB/image.png)
-
-More options?
-`-p, --pattern <pattern_type>` specify a pattern for method names, you can use `{path}` and `{method}` variables in the pattern
-for example `-p {method}_{path}` will give method with names like `GET_/pets`
-
-`-a, --appplan <applan_name>` create a new application plan
-
-### To a new service
-
-*Note*: This feature is only accessible to *Pro* and *Entreprise* customers
-
-`3scale-cli import  --type <spec_type> -f /path/to/swagger.json`
-
-## Mapping rules
-
-## Create a mapping rule
-`3cale-cli maprules create -p <pattern> -h <HTTP_VERB> -d <delta> -m <metric_id> -s <service_id>`
-
-## Display info about exisint mapping rule
-`3cale-cli maprules show -s <service_id> -r <mapping_rule_id> [options]`
-
-## Update an existing mapping rule
-`3cale-cli maprules list -s <service_id> -r <mapping_rule_id> [options]`
-
-You can update a specific attribute or all at the same time, possible values:
-`-p <pattern> -h <HTTP_VERB> -d <delta> -m <metric_id>`
-
-## Delete existing mapping rule
-`3cale-cli maprules delete -s <service_id> -r <mapping_rule_id> [options]`
-
-## Get all mapping rules of a service
-`3cale-cli maprules list -s <service_id>`
-
-## Help
-
-Display the [3scale](http://3scale.net) CLI help with the following command
-
-`3cale-cli -help`
-
-```
-
-  Usage: 3scale-cli [command] [options]
-
-
-  Commands:
-
-    import [options]     Import an API from it's API definition (swagger or RAML) into 3scale
-    config               Configure the 3scale cli
-    app-plan [options]    Adds an application plan to a service
-    metrics [options]    Add a new metric to a service.
-    methods [options]    Add a new method to a specific metric on a service
-    services [options]   Create a new service
-
-  A command line interface for 3scale API management
-
-  Options:
-
-    -h, --help     output usage information
-    -V, --version  output the version number
-```
-
 ## Contribute
 
-3Scale-cli is open source, and we welcome anybody who wants to participate and contribute!
+3scale-cli is open source, and we welcome anybody who wants to participate and contribute!
 
 If you want to fix a bug or make any changes, please [log an issue in GitHub](https://github.com/3scale/3scale-cli/issues) describing the bug
 or new feature.
