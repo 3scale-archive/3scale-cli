@@ -1,7 +1,7 @@
 {
   "name": "node-3scale-cli",
   "description": "A command line interface for 3scale API management",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "main": "index.js",
   "author": {
     "name": "picsoung",
