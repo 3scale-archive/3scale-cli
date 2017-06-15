@@ -6,7 +6,7 @@ Note: 3scale ActiveDocs are based on API definitions which are Open API / Swagge
 
 To upload your API definition to 3scale and create the ActiveDocs, run the following command:
 
-`3scale-cli activedocs -f /path/to/apidefinition`
+`3scale-cli activedocs create -f /path/to/apidefinition`
 
 Once you have created the ActiveDocs, learn how you publish them in your developer portal following [this tutorial](https://support.3scale.net/docs/api-documentation/publish-activedocs).
 
