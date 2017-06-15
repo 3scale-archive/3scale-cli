@@ -41,18 +41,18 @@ Before using the CLI tool you need to configure it and link it to your 3scale ac
 ```
 3scale-cli config
 [ 3scale-cli ] Please answer the following questions to configure 3scale cli.
-? 3scale provider key 1234567890abc
+? 3scale access token 1234567890abc
 ? 3scale id awesome-api
 [3scale-cli] 3scale cli tool configured
 ```
 
 ![output from terminal](https://www.evernote.com/l/ACV6L21JMwxFm771F9iPNwu3j7eyqLrArkoB/image.png)
 
-Your **3scale id** corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `3scale_id-admin.3scale.net`.
+Your **3scale id** corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `3scale_id-admin.3scale.net`.  
 
-The **3scale provider key** is the key that identifies you as a 3scale customer. It can be found in the ["Account"](https://CHANGEME-admin.3scale.net/p/admin/account) menu of your 3scale admin portal.  
+Your **access token** can be created and obtained according to the [tutorial](https://support.3scale.net/docs/accounts/tokens).
 
-![Provider Key](docs/provider-key.png)
+![Access Token](docs/access-token.png)
 
 ## Contribute
 
