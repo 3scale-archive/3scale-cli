@@ -9,11 +9,7 @@ module.exports = function applicationPlanCommand(program) {
     .option("-a, --appplan <appplan_id>", "Specify application plan id")
     .action(function(command,options){
       program.isConfigured()
-
-      if(!options.service){
-        program.error({message:"Service ID is required"});
-        process.exit(1);
-      }
+      program.require(options.service,"Service ID");
 
       switch (command) {
         case "create":
@@ -57,6 +53,13 @@ module.exports = function applicationPlanCommand(program) {
                 program.print({message:msg, type:"success"});
               }
             });
+            break;
+        case "copy":
+            appplan.copyApplicationPlan(options.service,options.appplan)
+            .then(function(result){
+              var msg = "Application plan "+options.appplan.inverse+" copied successfully."
+              program.print({message:msg, type:"success"});
+            })
             break;
         default:
           program.error({message:"Unknown command \""+command+"\""});
