@@ -29,7 +29,7 @@ Or you can also get all of your services and ids running this command:
 
 If you don't specify a service id, when you import an API definition a new service will be automatically created. 
 
-`3scale-cli import  --type <spec_type> -f /path/to/swagger.json`
+`3scale-cli import <spec_type> -f /path/to/swagger.json`
 
 *Note*: Creating a new service is only available for *Pro* and *Entreprise* customers.
 
