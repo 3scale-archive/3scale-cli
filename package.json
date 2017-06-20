@@ -27,7 +27,10 @@
     "node": ">= 0.8.0"
   },
   "pkg": {
-    "scripts": ["commands/*.js","lib/*.js"]
+    "scripts": [
+      "commands/*.js",
+      "lib/*.js"
+    ]
   },
   "dependencies": {
     "3scale-lambda": "^1.0.0",
