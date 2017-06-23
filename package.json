@@ -37,6 +37,7 @@
     "commander": "^2.2.0",
     "delay-promise": "^2.1.0",
     "easy-table": "^1.0.0",
+    "http-error-constructor": "^0.1.0",
     "inquirer": "^3.1.0",
     "mkdirp": "^0.5.1",
     "nconf": "^0.8.4",

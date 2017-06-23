@@ -16,7 +16,7 @@ Additionally, you can also:
 * Create, list, show, update, and delete [methods](/docs/methods.md)
 * Create, list, show, update, and delete [metrics](/docs/metrics.md)
 
-Note: Get familiar with the [3scale terminology](https://support.3scale.net/docs/terminology) reading through our support documentation. 
+Note: Get familiar with the [3scale terminology](https://support.3scale.net/docs/terminology) reading through our support documentation.
 
 ## Install
 
@@ -43,6 +43,7 @@ Before using the CLI tool you need to configure it and link it to your 3scale ac
 [ 3scale-cli ] Please answer the following questions to configure 3scale cli.
 ? 3scale access token 1234567890abc
 ? 3scale id awesome-api
+? 3scale wildcard domain (3scale.net)
 [3scale-cli] 3scale cli tool configured
 ```
 
