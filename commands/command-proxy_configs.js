@@ -1,6 +1,6 @@
-var proxy = require("../lib/proxy-configs");
+var proxy = require("../lib/proxy_configs");
 
-module.exports = function proxyCommand(program) {
+module.exports = function proxyConfigsCommand(program) {
   program
     .command("proxy-configs <cmd>")
     .description("\n  list - List all proxy configs \n  show - Show a specific proxy config\n  promote - Promote a proxy config from 'sandbox' to 'production' environment")
