@@ -19,7 +19,7 @@ module.exports = function accountsCommand(program) {
             program.require(options.id,"Account ID");
             accounts.showAccount(options.id).then(function(result){
               var msg = "Details about account:\n"
-              program.print({message:msg, type:"success", table: result});
+              program.print({message:msg, type:"success", data: result});
             });
             break;
           default:
