@@ -3,7 +3,7 @@ var methods = require("../lib/methods");
 module.exports = function methodsRulesCommand(program) {
   program
     .command("methods <cmd>")
-    .description("\n  create - Create a new method \n  list - List all methods of a service \n  show - Show a specific method of a service \n update - update a specific method of a service \n  delete - Delete a method of a service")
+    .description("\n  create - Create a new method \n  list - List all methods of a service \n  show - Show a specific method of a service \n  update - update a specific method of a service \n  delete - Delete a method of a service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-m, --metric <metric_id>","Metric id")
     .option("-t, --methodID <method_id>", "Method ID")
