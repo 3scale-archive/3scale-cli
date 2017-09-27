@@ -3,7 +3,7 @@ var applications = require("../lib/applications");
 module.exports = function applicationsCommand(program) {
   program
     .command("applications <cmd>")
-    .description("\n  list - List all applications \n  show - Show a specific application\n  update - Update a specific application\n  delete - Delete a specific application\n" +
+    .description("\n  create - Create an application\n  list - List all applications \n  show - Show a specific application\n  update - Update a specific application\n  delete - Delete a specific application\n" +
     "  suspend - Suspend an application (change the state to suspended)\n  resume - Resume a suspended application")
     .option("-a, --account <account_id>","Specify account id")
     .option("-i, --id <application_id>","Specify application id")
