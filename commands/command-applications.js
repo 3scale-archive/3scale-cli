@@ -3,7 +3,7 @@ var applications = require("../lib/applications");
 module.exports = function applicationsCommand(program) {
   program
     .command("applications <cmd>")
-    .description("\n  list - List all applications \n  show - Show a specific account")
+    .description("\n  list - List all applications \n  show - Show a specific application\n  update - Update a specific application\n  delete - Delete a specific application")
     .option("-a, --account <account_id>","Specify account id")
     .option("-i, --id <application_id>","Specify application id")
     .option("-p, --plan <plan_id>", "Specify application plain id")
@@ -35,13 +35,26 @@ module.exports = function applicationsCommand(program) {
             program.require(options.name, "Name");
             program.require(options.description, "Description");
             
-            var user_key = null
-            if (options.key) {
-              user_key = options.key;
-            }
-
-            applications.createApplication(options.account, options.plan, options.name, options.description, user_key).then(function(result){
+            applications.createApplication(options.account, options.plan, options.name, options.description, options.key).then(function(result){
               var msg = "Application "+options.name+" created.\n"
+              program.print({message:msg, type:"success", data: result});
+            });
+            break;
+          case "update":
+            program.require(options.account,"Account ID");
+            program.require(options.id,"Application ID");
+            
+            applications.updateApplication(options.account, options.id, options.name, options.description).then(function(result){
+              var msg = "Application updated:\n"
+              program.print({message:msg, type:"success", data: result});
+            });
+            break;
+          case "delete":
+            program.require(options.account,"Account ID");
+            program.require(options.id,"Application ID");
+            
+            applications.deleteApplication(options.account, options.id).then(function(result){
+              var msg = "Application deleted:\n"
               program.print({message:msg, type:"success", data: result});
             });
             break;
