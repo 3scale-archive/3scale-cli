@@ -3,7 +3,8 @@ var applications = require("../lib/applications");
 module.exports = function applicationsCommand(program) {
   program
     .command("applications <cmd>")
-    .description("\n  list - List all applications \n  show - Show a specific application\n  update - Update a specific application\n  delete - Delete a specific application")
+    .description("\n  list - List all applications \n  show - Show a specific application\n  update - Update a specific application\n  delete - Delete a specific application\n" +
+    "  suspend - Suspend an application (change the state to suspended)\n  resume - Resume a suspended application")
     .option("-a, --account <account_id>","Specify account id")
     .option("-i, --id <application_id>","Specify application id")
     .option("-p, --plan <plan_id>", "Specify application plain id")
@@ -54,6 +55,24 @@ module.exports = function applicationsCommand(program) {
             program.require(options.id,"Application ID");
             
             applications.deleteApplication(options.account, options.id).then(function(result){
+              var msg = "Application deleted:\n"
+              program.print({message:msg, type:"success", data: result});
+            });
+            break;
+          case "suspend":
+            program.require(options.account,"Account ID");
+            program.require(options.id,"Application ID");
+
+            applications.suspendApplication(options.account, options.id).then(function(result){
+              var msg = "Application deleted:\n"
+              program.print({message:msg, type:"success", data: result});
+            });
+            break;
+          case "resume":
+            program.require(options.account,"Account ID");
+            program.require(options.id,"Application ID");
+
+            applications.resumeApplication(options.account, options.id).then(function(result){
               var msg = "Application deleted:\n"
               program.print({message:msg, type:"success", data: result});
             });
