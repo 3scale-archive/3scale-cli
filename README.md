@@ -25,7 +25,7 @@ To install run the command
 `npm install -g node-3scale-cli`
 
 Get started looking at the options by running the 'Help' command:
-`3cale-cli --help`
+`3scale-cli --help`
 
 To see specific help for each one of the options, for example "activedocs", run:
 ```3scale-cli activedocs --help```
