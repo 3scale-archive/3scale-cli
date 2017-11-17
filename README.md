@@ -10,11 +10,15 @@ Its main capabilities include importing an API definition (Open API / Swagger or
 
 Additionally, you can also:
 
-* Create, list, show, and update [services](/docs/services.md)
+* Create, list, show, update, and delete [services](/docs/services.md)
 * Create, list, show, and delete [application plans](/docs/application-plans.md)
 * Create, list, show, update, and delete [mapping rules](/docs/mapping-rules.md)
 * Create, list, show, update, and delete [methods](/docs/methods.md)
 * Create, list, show, update, and delete [metrics](/docs/metrics.md)
+* List and show [accounts](/docs/accounts.md)
+* Create, list, show, update, delete, suspend, and resume [applications](/docs/applications.md)
+* Show, and update [proxy](/docs/proxy.md)
+* List, show, and promote [proxy-configs](/docs/proxy-configs.md)
 
 Note: Get familiar with the [3scale terminology](https://support.3scale.net/docs/terminology) reading through our support documentation.
 
