@@ -22,3 +22,8 @@ To retrive information about a specific service, run the following command:
 
 To update a service run any command and specify the service id. For example, to update the name of a service, run the following command:
 `3scale-cli services update --serviceName <new_service_name> -s <service_id>`
+
+## Delete an existing service
+
+To delete a service run the following command:
+`3scale-cli services delete -s <service_id>`
