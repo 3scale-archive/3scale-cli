@@ -3,7 +3,7 @@ var maprules = require("../lib/mappingrules");
 module.exports = function mappingRulesCommand(program) {
   program
     .command("maprules <cmd>")
-    .description("\n  create - Create a new mapping rule \n  list - List all mapping rules of a service \n  show - Show a specific mapping rules of a service \n update - update a specific mapping rules of a service \n  delete - Delete a mapping rule of a service")
+    .description("\n  create - Create a new mapping rule \n  list - List all mapping rules of a service \n  show - Show a specific mapping rules of a service \n  update - update a specific mapping rules of a service \n  delete - Delete a mapping rule of a service")
     .option("-s, --service <service_id>","Service id")
     .option("-p, --pattern <pattern_type>","Pattern for method names")
     .option("--http <http_method>","Specify HTTP method (GET, POST, PUT,...)")

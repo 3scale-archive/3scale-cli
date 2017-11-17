@@ -13,6 +13,13 @@ module.exports = function importCommand(program) {
        program.isConfigured()
        program.require(options.file, "File path is required")
 
+       //error when pattern not passed in double quotes
+       //check if '{' is in the string, if not display error
+       if(options.pattern && options.pattern.indexOf('{')===-1){
+         program.error({message:"The pattern parameter should be passed using double quotes. Example: -p \"{method}_{path}\""});
+         process.exit(1)
+       }
+
        switch (command) {
           case "swagger":
             swagger.import(options.file, options.service, options.appplan, options.pattern)

@@ -3,7 +3,7 @@ var services = require("../lib/services");
 module.exports = function servicesCommand(program) {
   program
     .command("services <cmd>")
-    .description("\n  create - Create a new service \n  list - List all services \n  show - Show a specific service \n  update - update a specific a service")
+    .description("\n  create - Create a new service \n  list - List all services \n  show - Show a specific service \n  update - Update a specific service\n  delete - Delete a specific service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-c, --serviceName <service_name>","Specify service name")
     .action(function(command, options){
@@ -36,6 +36,14 @@ module.exports = function servicesCommand(program) {
             services.updateService(options.service,options.serviceName).then(function(result){
                 var msg = "Service with id "+options.service.inverse+" updated.\n"
                 program.print({message:msg, type:"success", table: result});
+            });
+            break;
+          case "delete":
+            program.require(options.service,"Service ID required");
+
+            services.deleteService(options.service).then(function(result){
+                var msg = "Service with id "+options.service.inverse+" deleted.\n"
+                program.print({message:msg, type:"success"});
             });
             break;
           default:
