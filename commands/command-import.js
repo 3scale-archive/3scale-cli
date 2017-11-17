@@ -14,7 +14,7 @@ module.exports = function importCommand(program) {
        program.require(options.file, "File path is required")
 
        //error when pattern not passed in double quotes
-       //check if '{}' are in the string, if not display error
+       //check if '{' is in the string, if not display error
        if(options.pattern && options.pattern.indexOf('{')===-1){
          program.error({message:"The pattern parameter should be passed using double quotes. Example: -p \"{method}_{path}\""});
          process.exit(1)
