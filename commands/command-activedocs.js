@@ -7,11 +7,12 @@ module.exports = function activeDocsCommand(program) {
     .description("\n  create - Create a new ActiveDocs \n  list - List all ActiveDocs \n  update - Update a specific ActiveDocs spec \n  delete - Delete an ActiveDocs spec ")
     .option("-i, --docs <docs_id>","Specify activedocs id")
     .option("-f, --file <path>", "Specify path to an API description file")
+    .option("-s, --systemName <system_name>","Specify system name")
     .action(function(command,options){
       switch (command) {
         case "create":
           program.require(options.file,"Swagger spec file required");
-          activedocs.createActiveDocs(options.file).then(function(result){
+          activedocs.createActiveDocs(options.file, options.systemName).then(function(result){
             var msg = "Activedocs "+result.name.inverse +" created. \n"
             program.print({message:msg, type:"success", table: result, key:"api_doc","excludes":["body"]});
           })
