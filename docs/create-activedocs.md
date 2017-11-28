@@ -12,6 +12,11 @@ Once you have created the ActiveDocs, learn how you publish them in your develop
 
 If you'd like to publish multiple ActiveDocs in the same page , check out this [documentation](https://support.3scale.net/codehub/display-multiple-swagger-spec).
 
+You can specify a specific name for your activedocs using the optional `-s`, `--systemName` parameter.
+
+Example:
+`3scale-cli activedocs create -f /path/to/apidefinition -s <system_name>`
+
 ## Get all ActiveDocs of an account
 
 By running the following command `3scale-cli activedocs list` you'll get the following information about the activedocs:
