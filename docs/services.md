@@ -2,7 +2,7 @@
 
 ## Create a new service
 
-`3scale-cli services create --serviceName <service_name>`
+`3scale-cli services create --serviceName <service_name> --authentication <mode>`
 
 ## Get a list of services
 

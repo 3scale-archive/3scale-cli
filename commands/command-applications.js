@@ -10,7 +10,10 @@ module.exports = function applicationsCommand(program) {
     .option("-p, --plan <plan_id>", "Specify application plain id")
     .option("-n, --name <name>", "Specify application name")
     .option("-d, --description <description>", "Specify application description")
-    .option("-k, --key <user_key>", "Specify the user-key")
+    .option("--user-key <user_key>", "User Key (API Key) of the application")
+    .option("--application-id <application_id>", "App ID of the application to be created")
+    .option("--application-key <application_key>", "App Key(s) of the application to be created")
+    .option("--redirect-url <redirect_url>", "Redirect URL for the OAuth request")
     .action(function(command, options){
      program.isConfigured();
 
@@ -36,7 +39,14 @@ module.exports = function applicationsCommand(program) {
             program.require(options.name, "Name");
             program.require(options.description, "Description");
             
-            applications.createApplication(options.account, options.plan, options.name, options.description, options.key).then(function(result){
+            applications.createApplication(options.account,
+                                           options.plan,
+                                           options.name,
+                                           options.description,
+                                           options.userKey,
+                                           options.applicationId,
+                                           options.applicationKey,
+                                           options.redirectUrl).then(function(result){
               var msg = "Application "+options.name+" created.\n"
               program.print({message:msg, type:"success", data: result});
             });
@@ -45,7 +55,11 @@ module.exports = function applicationsCommand(program) {
             program.require(options.account,"Account ID");
             program.require(options.id,"Application ID");
             
-            applications.updateApplication(options.account, options.id, options.name, options.description).then(function(result){
+            applications.updateApplication(options.account,
+                                           options.id,
+                                           options.name,
+                                           options.description,
+                                           options.redirectUrl).then(function(result){
               var msg = "Application updated:\n"
               program.print({message:msg, type:"success", data: result});
             });

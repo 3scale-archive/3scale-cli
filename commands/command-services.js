@@ -6,13 +6,17 @@ module.exports = function servicesCommand(program) {
     .description("\n  create - Create a new service \n  list - List all services \n  show - Show a specific service \n  update - Update a specific service\n  delete - Delete a specific service")
     .option("-s, --service <service_id>","Specify service id")
     .option("-c, --serviceName <service_name>","Specify service name")
+    .option("-a, --authentication <mode>",
+            "Specify authentication mode ('1' for API key, '2' for App Id / App Key, 'oauth' for OAuth mode, 'oidc' for OpenID Connect)",
+            /^(1|2|oauth|oidc)$/i, '1')
     .action(function(command, options){
      program.isConfigured();
 
       switch (command) {
           case "create":
+            program.print({message: options.authentication})
             program.require(options.serviceName,"Service name");
-            services.createService(options.serviceName).then(function(result){
+            services.createService(options.serviceName, options.authentication).then(function(result){
               var msg = "Service with name "+options.serviceName.inverse+" created."
               program.print({message:msg, type:"success"});
             });
@@ -33,7 +37,7 @@ module.exports = function servicesCommand(program) {
           case "update":
             program.require(options.service,"Service ID required");
 
-            services.updateService(options.service,options.serviceName).then(function(result){
+            services.updateService(options.service,options.serviceName, options.authentication).then(function(result){
                 var msg = "Service with id "+options.service.inverse+" updated.\n"
                 program.print({message:msg, type:"success", table: result});
             });
