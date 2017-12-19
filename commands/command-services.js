@@ -14,7 +14,6 @@ module.exports = function servicesCommand(program) {
 
       switch (command) {
           case "create":
-            program.print({message: options.authentication})
             program.require(options.serviceName,"Service name");
             services.createService(options.serviceName, options.authentication).then(function(result){
               var msg = "Service with name "+options.serviceName.inverse+" created."
