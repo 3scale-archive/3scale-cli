@@ -1,3 +1,5 @@
 node_modules
 .DS_Store
 .idea
+lib/methods.js
+lib/config.js
