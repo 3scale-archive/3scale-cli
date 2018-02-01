@@ -7,9 +7,9 @@ module.exports = function limitsCommand(program) {
     .option("-s, --service <service_id>","Specify service id")
     .option("-m, --metric <metric_id>","Metric id")
     .option("-a, --appplan <appplan_id>", "Specify application plan id")
-    .option("-u, --unit <name>", "unit name")
     .option("-p, --period <name>", "Period of the limit")
     .option("-l, --limit <limit_id>","Limit id")
+    .option("-v, --value <value>","Value")
     .action(function(command,options){
       program.isConfigured()
       program.require(options.appplan,"Application Plan ID");
@@ -17,11 +17,13 @@ module.exports = function limitsCommand(program) {
       switch (command) {
           case "create":
             program.require(options.metric,"Metric ID required");
-            program.require(options.period,"Period required. possible values: eternity, year, month, day, hour, minute");
-            program.require(options.unit,"Value required");
+            program.require(options.period,"Period required. possible values: eternity, year, month, week, day, hour, minute");
+            program.require(options.value,"Value");
+
+            program.isValidValue(options.period, ['eternity', 'year', 'month', 'week', 'day', 'hour', 'minute'], 'Period')
 
             limits.createLimit(options.appplan, options.metric, options.period, options.value).then(function(result){
-              var msg = "Limit of" +result.value+" per "+result.period+" created under "+options.appplan.inverse+" Application Plan."
+              var msg = "Limit of "+result.value+" per "+result.period+" created under "+options.appplan.inverse+" Application Plan."
               program.print({message:msg, type:"success"});
             });
             break;
@@ -31,15 +33,19 @@ module.exports = function limitsCommand(program) {
               program.print({message:msg, type:"success", table: result, key:"limit"});
             });
             break;
-          // case "update":
-          //   program.require(options.metric,"Metric ID required");
-          //   program.require(options.methodID,"Method ID required");
-          //
-          //   methods.updateMethod(options.service,options.metric,options.methodID,options.method,options.unit).then(function(result){
-          //       var msg = "Method with id "+options.methodID.inverse+" updated.\n"
-          //       program.print({message:msg, type:"success", table: result});
-          //   });
-          //   break;
+          case "update":
+            program.require(options.metric,"Metric ID required");
+            program.require(options.limit,"Limit ID required");
+            program.require(options.period,"Period required. possible values: eternity, year, month, week, day, hour, minute");
+            program.require(options.value,"Value");
+
+            program.isValidValue(options.period, ['eternity', 'year', 'month', 'week', 'day', 'hour', 'minute'], 'Period')
+
+            limits.updateLimit(options.appplan, options.metric, options.limit, options.period, options.value).then(function(result){
+              var msg = "Limit of "+result.value+" per "+result.period+" updated under "+options.appplan.inverse+" Application Plan."
+              program.print({message:msg, type:"success"});
+            });
+            break;
           case "delete":
             program.require(options.metric,"Metric ID required");
             program.require(options.limit,"Limit ID required");
