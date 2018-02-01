@@ -10,6 +10,7 @@ module.exports = function limitsCommand(program) {
     .option("-u, --unit <name>", "unit name")
     .option("-p, --period <name>", "Period of the limit")
     .option("-l, --limit <limit_id>","Limit id")
+    .option("-v, --value <value>","Value")
     .action(function(command,options){
       program.isConfigured()
       program.require(options.appplan,"Application Plan ID");
@@ -18,10 +19,10 @@ module.exports = function limitsCommand(program) {
           case "create":
             program.require(options.metric,"Metric ID required");
             program.require(options.period,"Period required. possible values: eternity, year, month, day, hour, minute");
-            program.require(options.unit,"Value required");
+            program.require(options.value,"Value required");
 
             limits.createLimit(options.appplan, options.metric, options.period, options.value).then(function(result){
-              var msg = "Limit of" +result.value+" per "+result.period+" created under "+options.appplan.inverse+" Application Plan."
+              var msg = "Limit of "+result.value+" per "+result.period+" created under "+options.appplan.inverse+" Application Plan."
               program.print({message:msg, type:"success"});
             });
             break;
