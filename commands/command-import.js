@@ -1,6 +1,11 @@
 var swagger = require("../lib/swagger");
 var raml = require("../lib/raml");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function importCommand(program) {
   program
      .command("import <cmd>")

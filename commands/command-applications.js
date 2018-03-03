@@ -1,5 +1,10 @@
 var applications = require("../lib/applications");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function applicationsCommand(program) {
   program
     .command("applications <cmd>")

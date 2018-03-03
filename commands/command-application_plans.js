@@ -1,5 +1,10 @@
 var appplan = require("../lib/application_plans");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function applicationPlanCommand(program) {
   program
     .command("app-plan <cmd>")

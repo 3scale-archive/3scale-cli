@@ -1,5 +1,9 @@
 var accounts = require("../lib/accounts");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
 module.exports = function accountsCommand(program) {
   program
     .command("accounts <cmd>")

@@ -1,5 +1,10 @@
 var methods = require("../lib/methods");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function methodsRulesCommand(program) {
   program
     .command("methods <cmd>")
