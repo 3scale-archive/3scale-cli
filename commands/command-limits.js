@@ -1,5 +1,10 @@
 var limits = require("../lib/limits");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function limitsCommand(program) {
   program
     .command("limits <cmd>")

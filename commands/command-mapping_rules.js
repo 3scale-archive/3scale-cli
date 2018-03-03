@@ -1,5 +1,10 @@
 var maprules = require("../lib/mappingrules");
 
+if (exports.allowinsecure == 'Y' || exports.allowinsecure == 'y'){
+  	process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+
+
 module.exports = function mappingRulesCommand(program) {
   program
     .command("maprules <cmd>")
