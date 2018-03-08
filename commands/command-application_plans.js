@@ -40,20 +40,32 @@ module.exports = function applicationPlanCommand(program) {
                   var msg = "1 Application plan found:\n"
                   program.print({message:msg, type:"success",table: result});
                }else{
-                 var msg = "No Application plan found 😫"
+                 var msg = "No Application plan with name "+options.plan.inverse+" found 😫"
                  program.print({message:msg, type:"error"});
                }
               });
             }
             break;
         case "delete":
-            appplan.deleteApplicationPlanById(options.service,options.appplan).then(function(result){
+          if(options.appplan){ //delete by id
+            appplan.deleteApplicationPlanById(options.service,options.appplan).then(function(err, result){
               if(result){
                 var msg = "Application plan id "+options.appplan.inverse+" has been deleted."
                 program.print({message:msg, type:"success"});
               }
             });
-            break;
+          }else if(options.plan){ //delete by name
+            appplan.deleteApplicationPlanByName(options.service,options.plan).then(function(result){
+              if(result){
+                var msg = "Application plan with name "+options.plan.inverse+" has been deleted."
+                program.print({message:msg, type:"success"});
+              }else{
+                var msg = "No Application plan with name "+options.plan.inverse+" found 😫"
+                program.print({message:msg, type:"error"});
+              }
+            });
+          }
+          break;
         case "copy":
             appplan.copyApplicationPlan(options.service,options.appplan)
             .then(function(result){
