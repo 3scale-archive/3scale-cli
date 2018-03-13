@@ -59,6 +59,22 @@ Your **access token** can be created and obtained according to the [tutorial](ht
 
 ![Access Token](docs/access-token.png)
 
+### Config for on-prem
+
+Some on-prem users had issues regarding hitting 3scale API on onprem installations as reported [here](https://github.com/3scale/3scale-cli/issues/49).
+The tool should be called with the `NODE_TLS_REJECT_UNAUTHORIZED` flag.
+example: `NODE_TLS_REJECT_UNAUTHORIZED=0 3scale-cli services list`
+
+## Debug/verbose mode
+A debug mode is available. To turn it on just add `DEBUG=*` before your calls. It will print all debugs instructions.
+
+Ex: `DEBUG=* 3scale-cli services list`
+
+You can also turn debugs only for a specific part of the tool.
+Ex:
+`DEBUG=3scale-cli:acounts:* ...`
+`DEBUG=3scale-cli:services:* ...`
+
 ## Contribute
 
 3scale-cli is open source, and we welcome anybody who wants to participate and contribute!
