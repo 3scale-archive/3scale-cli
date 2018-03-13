@@ -8,17 +8,30 @@ module.exports = function proxyCommand(program) {
     .option("-e, --endpoint <endpoint>","Specify endpoint")
     .option("-S, --sandbox <sandbox_endpoint>","Specify sandbox endpoint")
     .option("-b, --backend <api_backend>","Specify API backend")
+    .option("-l, --credential <location>","Specify credential location (headers or query)", /^(headers|query)$/, "headers")
+    .option("--auth-app-key <app_key>","Parameter/Header where App Key is expected")
+    .option("--auth-app-id <app_id>","Parameter/Header where App ID is expected")
+    .option("--auth-user-key <user_key>","Parameter/Header where User Key is expected")
+    .option("--oidc-issuer-endpoint <oidc_issuer>","Location of your OpenID Provider")
     .action(function(command, options){
      program.isConfigured();
 
       switch (command) {
           case "update":
             program.require(options.service,"Service ID");
-            program.require(options.endpoint,"Endpoint");
+            /*program.require(options.endpoint,"Endpoint");
             program.require(options.sandbox,"Sandbox endpoint");
-            program.require(options.backend,"API backend");
-            program.print({message: "message", data: options.sandbox});
-            proxy.updateProxy(options.service, options.backend, options.endpoint, options.sandbox, "headers").then(function(result){
+            program.require(options.backend,"API backend");*/
+
+            proxy.updateProxy(options.service,
+                              options.backend,
+                              options.endpoint,
+                              options.sandbox,
+                              options.credential,
+                              options.authAppKey,
+                              options.authAppId,
+                              options.authUserKey,
+                              options.oidcIssuerEndpoint).then(function(result){
               var msg = "Proxy for service ID "+options.service+" updated.\n"
               program.print({message:msg, type:"success", data: result});
             });

@@ -2,7 +2,7 @@
 
 ## Create a new service
 
-`3scale-cli services create --serviceName <service_name>`
+`3scale-cli services create --serviceName <service_name> --authentication <mode>`
 
 ## Get a list of services
 
@@ -15,7 +15,7 @@ By running the following command `3scale-cli services list` you'll get the follo
 
 ## Display info about existing service
 
-To retrive information about a specific service, run the following command:
+To retrieve information about a specific service, run the following command:
 `3scale-cli services show -s <service_id>`
 
 ## Update an existing service
