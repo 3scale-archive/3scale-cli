@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # 3scale CLI
 
 ## Overview
