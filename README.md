@@ -1,4 +1,5 @@
 # DEPRECATED
+This is no longer supported, please consider using https://github.com/3scale/3scale_toolbox instead.
 
 # 3scale CLI
 
