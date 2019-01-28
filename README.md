@@ -58,9 +58,9 @@ Before using the CLI tool you need to configure it and link it to your 3scale ac
 
 ![output from terminal](https://www.evernote.com/l/ACV6L21JMwxFm771F9iPNwu3j7eyqLrArkoB/image.png)
 
-Your **3scale id** corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `3scale_id-admin.3scale.net`.  
-
-Your **access token** can be created and obtained according to the [tutorial](https://support.3scale.net/docs/accounts/tokens).
+ - Your **3scale id** corresponds to the domain of your [3scale](http://3scale.net) admin portal as in `3scale_id-admin.3scale.net` or the `TENANT_NAME` variable's value when installing on-premise AMP (default value is `3scale`).
+ 
+ - Your **access token** can be created and obtained according to the [tutorial](https://support.3scale.net/docs/accounts/tokens).
 
 ![Access Token](docs/access-token.png)
 
